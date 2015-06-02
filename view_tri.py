@@ -1,9 +1,14 @@
 ##Library
 
 import xml.etree.ElementTree as etree
+import xml.etree.cElementTree as ET
+
 import json
 from math import sqrt
-import xml.etree.cElementTree as ET
+
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import time
 
 ##Function
 
@@ -99,15 +104,26 @@ for elmt in esm:
 for layer in layers:
   layers[layer] = (sorted(layers[layer],key=cmp_to_key(comp_xy)))
   
-##Generate XML
+##View data
+fig = plt.figure()
+fig.subplots_adjust(left=0, bottom=0, right=1, top=1,wspace=1, hspace=1)
+ax = fig.gca(projection='3d')
+ax.set_xlim3d(-150, 150)
+ax.set_ylim3d(-150, 150)
 
-PRODUCT = ET.Element("PRODUCT")
-for layer in layers:
+nb_layer = int(raw_input("View layer ? \n"))
+for layer in layers :
 
-  for part in layers[layer]:
-    
-    POSI = ET.SubElement(PRODUCT, "POSI",x=str(part[0][1]),y=str(part[1][1]),z=str(part[2][1]),w=str(part[3][1]),p=str(part[4][1]), r=str(part[5][1]), config_data=str(part[6][1]))
-  
+  if layer == (nb_layer-1) :
+    for part in layers[layer]:
+      x = part[0][1]
+      y = part[1][1]
+      z = part[2][1]
+      label = "(%s)"%((layers[layer].index(part))+1)
+      ax.text(x, y, z, label, color='red')
 
-tree = ET.ElementTree(PRODUCT)
-tree.write("test_xml_sorted.xml")
+label = "(0)"
+ax.text(0, 0, z, label, color='red')
+ax.set_zlim3d(z-0.5, z+0.5)
+plt.axis('off')
+plt.show()
