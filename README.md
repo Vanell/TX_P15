@@ -21,8 +21,7 @@ La balise <POSI> représentant chaque pièce, en attribut :
 - p : rotation suivant y
 - r : rotation suivant z
 
-
-    <PRODUCT>
+	<PRODUCT>
 	    <POSI config_data="N, ,0,0" p="0.0" r="0.0" w="0.0" x="0.0" y="0.0" z="0.0" />
 	    <POSI config_data="N, ,0,0" p="0.0" r="37.5" w="180.0" x="2.59" y="-5.14" z="2.5" />
 	    <POSI config_data="N, ,0,0" p="0.0" r="142.5" w="0.0" x="9.6" y="-4.22" z="2.5" />
@@ -30,4 +29,11 @@ La balise <POSI> représentant chaque pièce, en attribut :
 
 ## Script python
 
-Le script python permet de trier les pièces au sien du fichier XML 
+Le script python permet de trier les pièces au sien du fichier XML.
+
+- Trie par couches, chaques pièces à même hauteur (z égal) sont rassembler
+- Trie dans chaques couches suivant la distance de la pièces au centre. Du plus petit au plus grand.
+
+###Script python view_tri.py
+
+Il permet de visualiser dans un graph matplotlib un couche choisit, l'ordre de pose de chaque pièces au sien de la couche.
