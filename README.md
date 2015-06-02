@@ -27,3 +27,7 @@ La balise <POSI> représentant chaque pièce, en attribut :
 	    <POSI config_data="N, ,0,0" p="0.0" r="37.5" w="180.0" x="2.59" y="-5.14" z="2.5" />
 	    <POSI config_data="N, ,0,0" p="0.0" r="142.5" w="0.0" x="9.6" y="-4.22" z="2.5" />
 	</PRODUCT>
+
+## Script python
+
+Le script python permet de trier les pièces au sien du fichier XML 
