@@ -3,7 +3,7 @@
 import xml.etree.ElementTree as etree
 import json
 from math import sqrt
-import xml.etree.cElementTree as ET
+from xml_export import xml_export
 
 ##Function
 
@@ -43,71 +43,68 @@ def comp_xy(v1,v2):
       return 0
       
 
+def xml_sorted(filename):
+  
+  file=open(filename, 'r')
+  
+  esm = list()
+  dic_esm = dict()
+  
+  id_part = 0
+  
+  tree = etree.parse(file)
+  
+  for h in tree.iter():
+      if h.tag== 'POSI':
+          part = list()
+          part.append(("x",round(float(h.get('x')),2)))
+          part.append(("y",round(float(h.get('y')),2)))
+          part.append(("z",round(float(h.get('z')),2)))
+          part.append(("w",round(float(h.get('w')),2)))
+          part.append(("p",round(float(h.get('p')),2)))
+          part.append(("r",round(float(h.get('r')),2)))
+          part.append(("config_data",str(h.get('config_data'))))
+          
+          esm.append((id_part,part))
+          dic_esm[id_part] = part
+          
+          id_part=id_part+1
+  
+  ##Trie en z
+  esm = sorted(esm,key=cmp_to_key(comp_z))
+  
+  ##Decoupage par couche
+  layers = dict()
+  tmp_layer = list()
+  list_layer = list()
+  c =0
+  zc = 0
+  
+  for elmt in esm:
+    if zc != elmt[1][2][1] or esm.index(elmt) == (len(esm)-1):
+  
+      layers[c] = tmp_layer
+  
+      tmp_layer = list()
+      c += 1
+      list_layer.append(zc)
+      zc = elmt[1][2][1]
+  
+    elif zc == elmt[1][2][1]:
+      tmp_layer.append(dic_esm[elmt[0]])
+  
+  ##Trie en X et Y
+  
+  for layer in layers:
+    layers[layer] = (sorted(layers[layer],key=cmp_to_key(comp_xy)))
+  
+  return layers
+
 ##Sorting
 
 filename = "ellipse_CAO.xml"
-file=open(filename, 'r')
+layers = xml_sorted(filename)
 
-esm = list()
-dic_esm = dict()
-
-id_part = 0
-
-tree = etree.parse(file)
-
-for h in tree.iter():
-    if h.tag== 'POSI':
-        part = list()
-        part.append(("x",round(float(h.get('x')),2)))
-        part.append(("y",round(float(h.get('y')),2)))
-        part.append(("z",round(float(h.get('z')),2)))
-        part.append(("w",round(float(h.get('w')),2)))
-        part.append(("p",round(float(h.get('p')),2)))
-        part.append(("r",round(float(h.get('r')),2)))
-        part.append(("config_data",str(h.get('config_data'))))
-        
-        esm.append((id_part,part))
-        dic_esm[id_part] = part
-        
-        id_part=id_part+1
-
-##Trie en z
-esm = sorted(esm,key=cmp_to_key(comp_z))
-
-##Decoupage par couche
-layers = dict()
-tmp_layer = list()
-list_layer = list()
-c =0
-zc = 0
-
-for elmt in esm:
-  if zc != elmt[1][2][1] or esm.index(elmt) == (len(esm)-1):
-
-    layers[c] = tmp_layer
-
-    tmp_layer = list()
-    c += 1
-    list_layer.append(zc)
-    zc = elmt[1][2][1]
-
-  elif zc == elmt[1][2][1]:
-    tmp_layer.append(dic_esm[elmt[0]])
-
-##Trie en X et Y
-
-for layer in layers:
-  layers[layer] = (sorted(layers[layer],key=cmp_to_key(comp_xy)))
-  
 ##Generate XML
 
-PRODUCT = ET.Element("PRODUCT")
-for layer in layers:
-
-  for part in layers[layer]:
-    
-    POSI = ET.SubElement(PRODUCT, "POSI",x=str(part[0][1]),y=str(part[1][1]),z=str(part[2][1]),w=str(part[3][1]),p=str(part[4][1]), r=str(part[5][1]), config_data=str(part[6][1]))
-  
-
-tree = ET.ElementTree(PRODUCT)
-tree.write("test_xml_sorted.xml")
+xml_export(layers,"xml_sorted.xml")
