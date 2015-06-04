@@ -1,14 +1,12 @@
 ##Library
 
 import xml.etree.ElementTree as etree
-import xml.etree.cElementTree as ET
 
 import json
 from math import sqrt
 
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-import time
 
 from tri import xml_sorted
 
