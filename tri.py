@@ -4,6 +4,7 @@ import xml.etree.ElementTree as etree
 import json
 from math import sqrt
 from xml_export import xml_export
+# from tkinter.filedialog import askopenfilename
 
 ##Function
 
@@ -45,9 +46,7 @@ def comp_xy(v1,v2):
       return 0
       
 
-def xml_sorted(filename):
-  
-  file=open(filename, 'r')
+def xml_sorted(file):
   
   esm = list()
   dic_esm = dict()
@@ -72,7 +71,6 @@ def xml_sorted(filename):
           
           id_part=id_part+1
   
-  print(len(esm))
   ##Trie en z
   esm = sorted(esm,key=cmp_to_key(comp_z))
   
@@ -106,6 +104,10 @@ def xml_sorted(filename):
 ##Sorting
 
 filename = "Monster.xml"
+file=open(filename, 'r')
+
+# filename = askopenfilename()
+
 layers = xml_sorted(filename)
 
 ##Generate XML
