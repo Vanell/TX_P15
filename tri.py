@@ -82,7 +82,7 @@ def xml_sorted(file):
           
           id_part=id_part+1
   
-  ##Trie en z
+  ##Tri en z
   esm = sorted(esm,key=cmp_to_key(comp_z))
   
   ##Decoupage par couche
@@ -109,7 +109,7 @@ def xml_sorted(file):
       tmp_layer.append(dic_esm[elmt[0]])
       layers[c] = tmp_layer
       
-  ##Trie en X et Y
+  ##Tri en X et Y
   
   for layer in layers:
     # print(layers[layer])
