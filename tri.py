@@ -93,10 +93,7 @@ def xml_sorted(file):
   zc = esm[0][1][2][1]
   
   for elmt in esm:
-    
-    if esm.index(elmt) != (len(esm)-1):
-      tmp_layer.append(dic_esm[elmt[0]])
-    
+
     if zc != elmt[1][2][1]:
   
       layers[c] = tmp_layer
@@ -105,6 +102,9 @@ def xml_sorted(file):
       list_layer.append(zc)
     zc = elmt[1][2][1]
     
+    if esm.index(elmt) != (len(esm)-1):
+      tmp_layer.append(dic_esm[elmt[0]])
+      
     if esm.index(elmt) == (len(esm)-1):
       tmp_layer.append(dic_esm[elmt[0]])
       layers[c] = tmp_layer
@@ -112,7 +112,6 @@ def xml_sorted(file):
   ##Tri en X et Y
   
   for layer in layers:
-    # print(layers[layer])
     layers[layer] = (sorted(layers[layer],key=cmp_to_key(comp_xy)))
   
   return layers
