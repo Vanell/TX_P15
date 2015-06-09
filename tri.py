@@ -72,6 +72,7 @@ def xml_sorted(filename):
           
           id_part=id_part+1
   
+  print(len(esm))
   ##Trie en z
   esm = sorted(esm,key=cmp_to_key(comp_z))
   
@@ -80,21 +81,21 @@ def xml_sorted(filename):
   tmp_layer = list()
   list_layer = list()
   c =0
-  zc = 0
+  zc = esm[0][1][2][1]
   
   for elmt in esm:
+    
+    tmp_layer.append(dic_esm[elmt[0]])
+    
     if zc != elmt[1][2][1] or esm.index(elmt) == (len(esm)-1):
   
       layers[c] = tmp_layer
-  
+      #print(c)
       tmp_layer = list()
       c += 1
       list_layer.append(zc)
-      zc = elmt[1][2][1]
-  
-    elif zc == elmt[1][2][1]:
-      tmp_layer.append(dic_esm[elmt[0]])
-  
+    zc = elmt[1][2][1]
+    
   ##Trie en X et Y
   
   for layer in layers:
@@ -104,9 +105,9 @@ def xml_sorted(filename):
 
 ##Sorting
 
-filename = "ellipse_CAO.xml"
+filename = "Monster.xml"
 layers = xml_sorted(filename)
 
 ##Generate XML
 
-xml_export(layers,"xml_sorted.xml")
+xml_export(layers,"%s_sorted.xml"%(filename.split(".")[0]))
