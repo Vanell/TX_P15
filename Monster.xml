@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<PRODUCT>
+	<POSI x="-30" y="0" z="15" w="0" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="20" y="-10" z="25" w="57.3" p="0" r="0" config_data="N, ,0,0"/>
+	<POSI x="20" y="0" z="25" w="57.3" p="0" r="0" config_data="N, ,0,0"/>
+	<POSI x="30" y="0" z="5" w="0" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="0" y="0" z="55" w="0" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="20" y="10" z="25" w="57.3" p="0" r="180" config_data="N, ,0,0"/>
+	<POSI x="0" y="-10" z="45" w="180" p="0" r="180" config_data="N, ,0,0"/>
+	<POSI x="0" y="0" z="15" w="57.3" p="0" r="0" config_data="N, ,0,0"/>
+	<POSI x="30" y="0" z="35" w="180" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="-20" y="0" z="35" w="0" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="0" y="0" z="5" w="0" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="0" y="0" z="35" w="0" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="-20" y="-10" z="25" w="57.3" p="0" r="180" config_data="N, ,0,0"/>
+	<POSI x="0" y="-10" z="15" w="0" p="0" r="180" config_data="N, ,0,0"/>
+	<POSI x="0" y="10" z="15" w="180" p="0" r="0" config_data="N, ,0,0"/>
+	<POSI x="0" y="10" z="45" w="180" p="0" r="180" config_data="N, ,0,0"/>
+	<POSI x="-30" y="0" z="35" w="0" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="30" y="0" z="45" w="11.68" p="90" r="24.96" config_data="N, ,0,0"/>
+	<POSI x="20" y="0" z="35" w="180" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="0" y="0" z="25" w="57.3" p="90" r="150.88" config_data="N, ,0,0"/>
+	<POSI x="-20" y="10" z="25" w="57.3" p="0" r="0" config_data="N, ,0,0"/>
+	<POSI x="30" y="0" z="15" w="180" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="0" y="0" z="45" w="180" p="0" r="180" config_data="N, ,0,0"/>
+	<POSI x="-20" y="0" z="25" w="57.3" p="0" r="180" config_data="N, ,0,0"/>
+	<POSI x="-30" y="0" z="5" w="180" p="0" r="90" config_data="N, ,0,0"/>
+	<POSI x="-30" y="0" z="45" w="11.68" p="90" r="155.04" config_data="N, ,0,0"/>
+</PRODUCT>
