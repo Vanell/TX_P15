@@ -116,7 +116,7 @@ Set xmlDoc = Nothing
 'Lancement du fichier tri python
 Dim RetVal As Variant
 Dim stExecute As String: stExecute = """C:\Python33\python.exe"""
-Dim stFile As String: stFile = "c:\Users\Haytham\Desktop\tri_macro.py " & product1.Name & ".xml"
+Dim stFile As String: stFile = "c:\Python33\Lib\Fanuc_xml\tri_macro.py " & product1.Name & ".xml"
 Dim stFull As String: stFull = stExecute & " " & stFile
 
 RetVal = Shell(stFull & " DISPLAY", vbNormalFocus)
