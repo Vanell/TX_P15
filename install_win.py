@@ -1,6 +1,9 @@
+
+#Import lib
 import os
 import urllib.request, urllib.parse, urllib.error
  
+#Declare variable
 directory = 'c:\Gen_Xml\\'
 file_name_py = 'tri_macro.py'
 file_name_vba = 'IHM.catvba'
@@ -10,6 +13,7 @@ destination_vba = directory+file_name_vba
 url_python = "https://github.com/Vanell/TX_P15/raw/master/tri_macro.py"
 url_vba = "https://github.com/Vanell/TX_P15/raw/master/IHM.catvba"
  
+#Begin install
 print("Downloading tri macro python")
 urllib.request.urlretrieve(url_python, file_name_py)
 print("Downloading tri macro vba")
