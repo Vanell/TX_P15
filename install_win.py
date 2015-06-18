@@ -4,7 +4,7 @@ import os
 import urllib.request, urllib.parse, urllib.error
  
 #Declare variable
-directory = 'c:\Gen_Xml\\'
+directory = 'c:\Gen_XML\\'
 file_name_py = 'tri_macro.py'
 file_name_vba = 'IHM.catvba'
 destination_py = directory+file_name_py
@@ -45,4 +45,4 @@ print('Open : IHM.catvba')
 input()
 print('Close window')
 print('Now it\'s ready and you can execute Gen_XML')
-
+input()
