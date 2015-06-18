@@ -36,8 +36,8 @@ def comp_z(v1,v2):
       return 0
       
 def comp_xy(v1,v2):
-  dx = -150
-  dy = -150
+  dx = sys.argv[2]
+  dy = sys.argv[3]
   if sqrt((v1[0][1]+dx)**2+(v1[1][1]+dy)**2) < sqrt((v2[0][1]+dx)**2+(v2[1][1]+dy)**2):
         return -1
   elif sqrt((v1[0][1]+dx)**2+(v1[1][1]+dy)**2) > sqrt((v2[0][1]+dx)**2+(v2[1][1]+dy)**2):
