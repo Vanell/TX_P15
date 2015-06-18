@@ -25,9 +25,9 @@ if not os.path.exists(directory):
 
 print("Mouve python marco")
 #Mouve python script
-os.rename(file_name_py, destination)
+os.rename(file_name_py, destination_py)
 print("Mouve vba marco")
 #Mouve catia macro
-os.rename(file_name_vba, destination)
+os.rename(file_name_vba, destination_py)
 print('Install Done !')
 raw_input()
