@@ -28,6 +28,6 @@ print("Mouve python marco")
 os.rename(file_name_py, destination_py)
 print("Mouve vba marco")
 #Mouve catia macro
-os.rename(file_name_vba, destination_py)
+os.rename(file_name_vba, destination_vba)
 print('Install Done !')
 raw_input()
