@@ -17,7 +17,7 @@ url_vba = "https://github.com/Vanell/TX_P15/raw/master/IHM.catvba"
 print("Downloading tri macro python")
 urllib.request.urlretrieve(url_python, file_name_py)
 print("Downloading tri macro vba")
-urllib.request.urlretrieve(url_python, file_name_vba)
+urllib.request.urlretrieve(url_vba, file_name_vba)
 
 print("Create folder for marco")
 if not os.path.exists(directory):
