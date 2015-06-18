@@ -4,8 +4,8 @@ import urllib.request, urllib.parse, urllib.error
 directory = 'c:\Gen_Xml\\'
 file_name_py = 'tri_macro.py'
 file_name_vba = 'IHM.catvba'
-destination_py = directory_py+file_name_py
-destination_vba = directory_vba+file_name_vba
+destination_py = directory+file_name_py
+destination_vba = directory+file_name_vba
  
 url_python = "https://github.com/Vanell/TX_P15/raw/master/tri_macro.py"
 url_vba = "https://github.com/Vanell/TX_P15/raw/master/IHM.catvba"
