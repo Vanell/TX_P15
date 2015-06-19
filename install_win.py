@@ -22,7 +22,9 @@ urllib.request.urlretrieve(url_vba, file_name_vba)
 print("Create folder for marco")
 if not os.path.exists(directory):
     os.makedirs(directory)
-
+if not os.path.exists(directory+"\xml"):
+    os.makedirs(directory+"\xml")
+    
 print("Mouve python marco")
 #Mouve python script
 os.rename(file_name_py, destination_py)
