@@ -5,7 +5,7 @@ import urllib.request, urllib.parse, urllib.error
  
 #Declare variable
 directory = 'c:\Gen_XML\\'
-directoryxml ='c:\Gen_X ML\\xml\\'
+directory_xml ='c:\Gen_X ML\\xml\\'
 file_name_py = 'tri_macro.py'
 file_name_vba = 'IHM.catvba'
 destination_py = directory+file_name_py
