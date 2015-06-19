@@ -5,6 +5,7 @@ import urllib.request, urllib.parse, urllib.error
  
 #Declare variable
 directory = 'c:\Gen_XML\\'
+directoryxml ='c:\Gen_X ML\\xml\\'
 file_name_py = 'tri_macro.py'
 file_name_vba = 'IHM.catvba'
 destination_py = directory+file_name_py
@@ -22,8 +23,8 @@ urllib.request.urlretrieve(url_vba, file_name_vba)
 print("Create folder for marco")
 if not os.path.exists(directory):
     os.makedirs(directory)
-if not os.path.exists(directory+"\xml"):
-    os.makedirs(directory+"\xml")
+if not os.path.exists(directory_xml):
+    os.makedirs(directory_xml)
     
 print("Mouve python marco")
 #Mouve python script
